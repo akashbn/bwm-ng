@@ -1,0 +1,24 @@
+<agm-map (mapReady)="mapReadyHandler()"
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="13"
+>
+<agm-circle *ngIf="!isPositioerror && lat && lng"
+  [latitude]="lat"
+  [longitude]="lng"
+  [radius]="300"
+  [fillColor]="'#F44336'"
+  [fillOpacity]="0.4"
+>
+</agm-circle>
+
+<agm-info-window *ngIf="isPositioerror"
+[latitude]="0"
+[longitude]="0"
+[maxWidth]="300"
+[isOpen]=true
+>
+    Not able to load the map.
+</agm-info-window>
+</agm-map>
+
